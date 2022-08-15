@@ -9,6 +9,10 @@ const {Member} = db;
 // middle ware JSON을 가져오기 위한 메서드
 app.use(express.json());
 
+app.get('/', (req, res) => {
+  res.send('URL should contain /api/..')
+})
+
 // URL이 members로 왔을때 모든 회원정보 호출
 app.get("/api/members", async (req, res) => {
   // req.query == 쿼리스트링의 값을 가져옴
